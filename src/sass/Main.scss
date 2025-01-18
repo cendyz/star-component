@@ -1,0 +1,66 @@
+@use './utilities/' as *;
+
+.box {
+	text-align: center;
+	height: 300px;
+	padding: 2em;
+	background-color: white;
+	border-radius: 1em;
+}
+
+.title {
+	margin: 0 auto;
+	width: 500px;
+	font-size: 2.5rem;
+}
+
+.desc {
+	width: 540px;
+}
+
+.btnsBoxs {
+	display: flex;
+	justify-content: center;
+	flex-direction: row-reverse;
+}
+
+.star {
+	position: relative;
+	margin: 2em 0.5em;
+	width: 70px;
+	aspect-ratio: 1;
+	background: rgb(219, 219, 219);
+	clip-path: polygon(50% 0, 79% 90%, 2% 35%, 98% 35%, 21% 90%);
+	transition: background-color 0.2s;
+}
+
+.leftStar,
+.rightStar {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transition: background-color 0.2s;
+}
+
+.leftStar {
+	right: 50%;
+	&:hover {
+		background-color: gold;
+	}
+}
+
+.rightStar {
+	left: 50%;
+	&:hover {
+		background-color: gold;
+		.leftStar {
+			background-color: gold;
+		}
+	}
+}
+
+.selected ~ .star,
+.selected {
+	background-color: gold;
+}
