@@ -45,12 +45,16 @@
 
 .leftStar {
 	right: 50%;
-	&:hover {
-		background-color: gold;
-	}
 }
 .rightStar {
 	right: 0;
+}
+
+.leftStar:hover,
+.selected ~ .star,
+.selectedLeft,
+.selectedRight {
+	background-color: gold;
 }
 
 .btnsBoxs:has(.leftStar:hover) {
@@ -65,11 +69,4 @@
 	.star:hover {
 		background-color: gold;
 	}
-}
-
-
-
-.selected ~ .star,
-.selected {
-	background-color: gold;
 }

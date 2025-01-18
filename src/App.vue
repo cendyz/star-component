@@ -9,11 +9,19 @@ const stars: Record<number, string> = {
 }
 
 const num = ref(-1)
+const right = ref(-1)
 
 const desc = ref('')
 
-const showText = (index: number): void => {
+const leftStar = (index: number): void => {
 	desc.value = stars[index]
+	right.value = -1
+	num.value = index
+}
+
+const rightStar = (index: number): void => {
+	desc.value = stars[index]
+	right.value = index
 	num.value = index
 }
 </script>
@@ -27,10 +35,15 @@ const showText = (index: number): void => {
 				class="star"
 				v-for="(_, index) in stars"
 				:key="index"
-				@click="showText(index)"
 				:class="{ selected: num === index }">
-				<span class="leftStar"></span>
-				<span class="rightStar"></span>
+				<span
+					class="leftStar"
+					:class="{ selectedLeft: num === index }"
+					@click="leftStar(index)"></span>
+				<span
+					class="rightStar"
+					:class="{ selectedRight: right === index }"
+					@click="rightStar(index)"></span>
 			</button>
 		</div>
 		<p class="desc" v-text="desc"></p>
