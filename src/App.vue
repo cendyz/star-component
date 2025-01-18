@@ -25,13 +25,13 @@ const showText = (index: number): void => {
 		<div class="btnsBoxs">
 			<button
 				class="star"
-				v-for="(_,index) in stars"
+				v-for="(_, index) in stars"
 				:key="index"
 				@click="showText(index)"
-				:class="{selected: num === index}">
-			<span class="leftStar"></span>
-			<span class="rightStar"></span>
-		</button>
+				:class="{ selected: num === index }">
+				<span class="leftStar"></span>
+				<span class="rightStar"></span>
+			</button>
 		</div>
 		<p class="desc" v-text="desc"></p>
 	</main>

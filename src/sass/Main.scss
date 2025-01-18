@@ -49,16 +49,25 @@
 		background-color: gold;
 	}
 }
-
 .rightStar {
-	left: 50%;
-	&:hover {
+	right: 0;
+}
+
+.btnsBoxs:has(.leftStar:hover) {
+	.star:hover ~ .star {
 		background-color: gold;
-		.leftStar {
-			background-color: gold;
-		}
 	}
 }
+
+.btnsBoxs:has(.rightStar:hover) {
+	.star:hover ~ .star,
+	.rightStar:hover,
+	.star:hover {
+		background-color: gold;
+	}
+}
+
+
 
 .selected ~ .star,
 .selected {
